@@ -1,8 +1,8 @@
 <template>
   <div class="info">
-    <div class="avatar">
+    <!-- <div class="avatar">
       <img src="../assets/logo.png">
-    </div>
+    </div> -->
     <!-- ref表示组件名称，用于直接操作DOM -->
     <el-form ref="loginForm" :rules="rules" :model="form" class='container'>
       <div class="userInfo">
@@ -54,6 +54,7 @@ export default {
           login(params).then(res => {
             if (res.meta.status === 200) {
               // 存储token
+              // localStorage ,在浏览器存储数据,并没有时间限制
               localStorage.setItem('mytoken', res.data.token)
               // 登录成功，跳转到主页
               this.$router.push({name: 'home'})
@@ -118,5 +119,14 @@ export default {
   }*/
   .el-form-item__error {
     color: blue;
+  }
+  .info {
+    background: url("../assets/01.jpg") no-repeat;
+    width:100%;
+    height:100%;
+    background-size:100% 100%;
+  }
+  .el-form{
+    background-color: rgba(1, 1, 1, 0);
   }
 </style>
