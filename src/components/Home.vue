@@ -65,12 +65,12 @@
 </el-container>
 </template>
 <script>
-import { testData } from "../api/api.js";
+import { testData } from '../api/api.js'
 export default {
-  data() {
+  data () {
     return {
       isCollapse: false
-    };
+    }
   },
   // 方法
   methods: {
@@ -83,26 +83,26 @@ export default {
     },
     // 控制菜单的折叠与展开
     toggleMenu () {
-      this.isCollapse = !this.isCollapse;
+      this.isCollapse = !this.isCollapse
     },
-    handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+    handleOpen (key, keyPath) {
+      // console.log(key, keyPath)
     },
-    handleClose(key, keyPath) {
-      console.log(key, keyPath);
+    handleClose (key, keyPath) {
+      // console.log(key, keyPath)
     }
   },
   // 挂载后
-  mounted() {
+  mounted () {
     testData({
-      query: "",
+      query: '',
       pagenum: 1,
       pagesize: 10
     }).then(res => {
       // console.log("123");
-    });
+    })
   }
-};
+}
 </script>
 
 <style scoped>
